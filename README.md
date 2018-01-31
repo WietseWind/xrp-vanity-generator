@@ -19,6 +19,8 @@ The example command above will search for wallet addresses containing either _he
 
 ![Demo of install and wallet generation](https://gtasb9v.dlvr.cloud/4.gif)
 
+If you use Windows and you don't have NodeJS running: [here's a screencap of the steps above (1-5)](https://fxtduw7.dlvr.cloud/4.gif).
+
 ## Notes
 
 - This script will look for your keywords at the beginning or at the end of wallet addresses.
