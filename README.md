@@ -26,6 +26,25 @@ The example command above will search for wallet addresses containing either _he
 - The longer the keyword you are looking for, the longer it takes to find a match.
 - If you want to be make sure the generated wallets + keys are safe, generate offline.
 
+### Security / randomness
+
+> Serious question. How do we know these addresses are random and not some sort of sequence?
+
+Good question indeed. The only way to be sure is to check the code;
+
+My code [is over here](https://github.com/WietseWind/xrp-vanity-generator/blob/master/xrpwallet.js) and as you can see is invoke the method "api.generateAddress()" - and as you can see on line 1 and 2:
+
+    const rippleLib  = require('ripple-lib').RippleAPI
+    const api        = new rippleLib()
+
+... I use **ripple-lib** to do this. [ripple-lib](https://github.com/ripple/ripple-lib) is from Ripple (the company) - this code is open source as well.
+
+[This](https://github.com/ripple/ripple-lib/blob/develop/src/offline/generate-address.ts) is how they generate a keypair. They use their own lib [ripple-keypairs](https://github.com/ripple/ripple-keypairs) to do this. The function is on [line 17 over here](https://github.com/ripple/ripple-keypairs/blob/master/src/index.js) and at line 19 you can see they use the **brorand** lib. to [generate the randomness](https://github.com/indutny/brorand/blob/master/index.js). This lib. uses the **crypto** object, a native NodeJS object, by invoking:
+
+    crypto.randomBytes()
+
+More info about this method [over here](https://nodejs.org/api/crypto.html#crypto_crypto_randombytes_size_callback).
+
 ### Feeling generous?
 
 Tips are highly appreciated at XRP address `rPdvC6ccq8hCdPKSPJkPmyZ4Mi1oG2FFkT` or using
