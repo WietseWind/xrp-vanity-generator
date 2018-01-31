@@ -17,6 +17,8 @@ node xrpwallet.js hello pepper johndoe
 
 The example command above will search for wallet addresses containing either _hello_, _pepper_ or _johndoe_.
 
+![Demo of install and wallet generation](https://gtasb9v.dlvr.cloud/4.gif)
+
 ## Notes
 
 - This script will look for your keywords at the beginning or at the end of wallet addresses.
