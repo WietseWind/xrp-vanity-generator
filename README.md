@@ -28,7 +28,7 @@ The example command above will search for wallet addresses containing either _he
 
 ### Security / randomness
 
-> Serious question. How do we know these addresses are random and not some sort of sequence?
+> Serious question. How do we know these addresses are random and not some sort of sequence? [@ Reddit](https://www.reddit.com/r/Ripple/comments/7u9wmc/create_your_own_fancy_wallet_address_open_source/dtinlkd/)
 
 Good question indeed. The only way to be sure is to check the code;
 
