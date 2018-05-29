@@ -8,7 +8,7 @@ console.log('')
 
 if (lookFor.length > 0) {
 
-  console.log('Looking voor wallet addresses with keywords at the start/end:')
+  console.log('Looking for wallet addresses with keywords at the start/end:')
   lookFor.forEach(function (k) {
     console.log('   - ', k)
   })
