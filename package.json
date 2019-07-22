@@ -5,10 +5,11 @@
   "author": "Wietse Wind <mail@wietse.com>",
   "private": false,
   "dependencies": {
-    "ripple-lib": "^0.18.1"
+    "ripple-keypairs": "^0.11.0",
+    "xrpl-tagged-address-codec": "^0.2.0"
   },
   "engines": {
-    "node": ">= 6.0.0",
+    "node": ">= 8.0.0",
     "npm": ">= 3.0.0"
   }
 }
