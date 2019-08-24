@@ -14,7 +14,7 @@ console.log('\x1b[36m%s\x1b[0m', '   by @WietseWind (Twitter) /u/pepperew (Reddi
 console.log('')
 
 const rer = '^(r)(' + lookFor.join('|') + ')(.+)$|^(r.+)(' + lookFor.join('|') + ')$'
-const rex = '^(X)(' + lookFor.join('|') + ')(.+)$|^(X.+)(' + lookFor.join('|') + ')$'
+const rex = '^(X.)(' + lookFor.join('|') + ')(.+)$|^(X.+)(' + lookFor.join('|') + ')$'
 let count = 0
 
 if (lookFor.length > 0) {
