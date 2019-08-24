@@ -12,7 +12,7 @@ if (!isSubprocess) {
 }
 
 const run = (id, match) => {
-  const re = '^(X)(' + match.join('|') + ')(.+)$|^(X.+)(' + match.join('|') + ')$'
+  const re = '^(X.)(' + match.join('|') + ')(.+)$|^(X.+)(' + match.join('|') + ')$'
   const regexp = new RegExp(re, 'i')
 
   if (match.length > 0) {
