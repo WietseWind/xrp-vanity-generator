@@ -12,8 +12,10 @@ if (!isSubprocess) {
 }
 
 const run = (id, match) => {
-  const re = '^(X)(' + match.join('|') + ')(.+)$|^(X.+)(' + match.join('|') + ')$'
-  const regexp = new RegExp(re, 'i')
+  const rer = '^(r)(' + match.join('|') + ')(.+)$|^(r.+)(' + match.join('|') + ')$'
+  const regexpr = new RegExp(rer, 'i')
+  const rex = '^(X)(' + match.join('|') + ')(.+)$|^(X.+)(' + match.join('|') + ')$'
+  const regexpx = new RegExp(rex, 'i')
 
   if (match.length > 0) {
     if (!isSubprocess) {
@@ -23,7 +25,8 @@ const run = (id, match) => {
       })
       console.log(' ')
       console.log('For the geeks: testing regular expression: ')
-      console.log('  ', re)
+      console.log('  r... address: ', rer)
+      console.log('  X... address: ', rex)
       console.log()
       console.log('\x1b[33m%s\x1b[0m', '-- Press Control C to quit --');
       console.log()
@@ -38,8 +41,8 @@ const run = (id, match) => {
         xaddress: codec.Encode({account:address}),
         secret: seed
       }
-      const testr = regexp.exec(account.address)
-      const testx = regexp.exec(account.xaddress)
+      const testr = regexpr.exec(account.address)
+      const testx = regexpx.exec(account.xaddress)
       if (testr && testx) {
         const matchedAddressX = testx[1] === undefined
           ? testx[4] + '\x1b[32m' + testx[5] + '\x1b[0m'
