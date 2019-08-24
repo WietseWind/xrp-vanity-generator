@@ -13,7 +13,8 @@ console.log('\x1b[36m%s\x1b[0m', 'XRP Vanity Wallet Generator')
 console.log('\x1b[36m%s\x1b[0m', '   by @WietseWind (Twitter) /u/pepperew (Reddit)')
 console.log('')
 
-const re = '^(X)(' + lookFor.join('|') + ')(.+)$|^(X.+)(' + lookFor.join('|') + ')$'
+const rer = '^(r)(' + lookFor.join('|') + ')(.+)$|^(r.+)(' + lookFor.join('|') + ')$'
+const rex = '^(X)(' + lookFor.join('|') + ')(.+)$|^(X.+)(' + lookFor.join('|') + ')$'
 let count = 0
 
 if (lookFor.length > 0) {
@@ -29,7 +30,8 @@ if (lookFor.length > 0) {
   })
   console.log()
   console.log('For the geeks: testing regular expression: ')
-  console.log('  ', re)
+  console.log('  r... address: ', rer)
+  console.log('  X... address: ', rex)
 
   const children = []
 
