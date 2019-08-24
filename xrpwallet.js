@@ -38,20 +38,24 @@ const run = (id, match) => {
         xaddress: codec.Encode({account:address}),
         secret: seed
       }
-      const test = regexp.exec(account.xaddress)
-      if (test) {
-        const matchedAddress = test[1] === undefined
-          ? test[4] + '\x1b[32m' + test[5] + '\x1b[0m'
-          : test[1] + '\x1b[32m' + test[2] + '\x1b[0m' + test[3]
+      const testr = regexp.exec(account.address)
+      const testx = regexp.exec(account.xaddress)
+      if (testr && testx) {
+        const matchedAddressX = testx[1] === undefined
+          ? testx[4] + '\x1b[32m' + testx[5] + '\x1b[0m'
+          : testx[1] + '\x1b[32m' + testx[2] + '\x1b[0m' + testx[3]
+        const matchedAddressR = testr[1] === undefined
+          ? testr[4] + '\x1b[32m' + testr[5] + '\x1b[0m'
+          : testr[1] + '\x1b[32m' + testr[2] + '\x1b[0m' + testr[3]
 
         if (!isSubprocess) {
           process.stdout.write("\n")
-          console.log(` > Match: [ ${matchedAddress} (${account.address}) ] with secret [ ${account.secret} ]`)
+          console.log(` > Match: [ ${matchedAddressX} (${matchedAddressR}) ] with secret [ ${account.secret} ]`)
         } else {
           process.send({ 
             match: {
-              xaddress: matchedAddress,
-              address: account.address,
+              xaddress: matchedAddressX,
+              address: matchedAddressR,
               secret: account.secret
             },
             child: id,
